@@ -127,7 +127,7 @@ Therefore, we will evaluate the models in favor of metrics that are robust to cl
 
 ### Analysis
 
-Per the tables above, we can reach a number of conclusions. Bear in mind that, due to class imbalance, we will primary focus on F-score, which combine both precision and recall quite favorably and is a more robust metric than accuracy under this circumstance.
+Per the tables above, we can reach a number of conclusions. Bear in mind that, due to class imbalance, we will primarily focus on F-score, which combine both precision and recall quite favorably and is a more robust metric than accuracy under this circumstance.
 
 1. On the test set, within each type of group, the highest F-score is achieved by a variant with at least some flavor of data manipulation. Namely, <font color='pink'>AlexNet</font> with augmentation, <font color='lightblue'>ResNet</font> with augmentation and 600 by 600 images, and <font color='lightgreen'>InceptionNet</font> with augmentation and 600 by 600 images. This implies that data augmentation and a larger input size are conducive to generalizability when employed wisely.
 
