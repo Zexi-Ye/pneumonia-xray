@@ -72,9 +72,9 @@ In order for raw images to be passed into neural networks, we are required to co
 
 Four schemes are used in converting the data.
 
-1. **Standard:** downscale the training images to $224 \times 224$ (or $299 \times 299$ for InceptionNet)
+1. **Standard:** downscale the training images to 224 by 224 (or 299 by 299 for InceptionNet)
 2. **Augmented:** Scheme 1 + add random transformation to training images
-3. **Large image:** instead of scaling down to $224 \times 224$ (or $299 \times 299$), we scale down the images to $600 \times 600$ in hopes of preserving finer details
+3. **Large image:** instead of scaling down to 224 by 224 (or 299 by 299), we scale down the images to 600 by 600 in hopes of preserving finer details
 4. **Augmented + large image:** combine Scheme 3 and Scheme 4
 
 Here are a handful of images after data augmentation.
@@ -109,7 +109,7 @@ Despite the fact that **accuracy** is a very intuitive metric that is simple to 
 
 First, the datasets are severely **imbalanced**. In both the training and the testing datasets, positive observations outnumber negative observations by a substantial margin (3843 vs. 1312 in training set, 390 vs. 234 in testing set). Thus, we need to employ some base-rate invariant metrics (such as F-score) to obtain a more robust evaluation.
 
-Second, the costs associated with **false positives** and **false negatives** differ immensely. Since we are operating in the medical field, a false negative would typically lead to far greater consequences than a false positive, in that the latter would cause some minor panic and potentially prompt a re-examination, while the former would lead to a lack of crucial treatment, allowing the patient's condition to deteriorate unchecked.
+Second, the costs associated with **false positives** and **false negatives** differ immensely. Since we are operating in the medical field, a false negative would typically lead to far greater consequences than a false positive, in that the latter would cause some minor panic and potentially prompt a re-examination, while the former would lead to a lack of crucial treatment, allowing the patient's condition to deteriorate unchecked.
 
 Therefore, we will evaluate the models in favor of metrics that are robust to class imbalance. Tables of metrics are displayed as follows.
 
@@ -129,7 +129,7 @@ Therefore, we will evaluate the models in favor of metrics that are robust to cl
 
 Per the tables above, we can reach a number of conclusions. Bear in mind that, due to class imbalance, we will primary focus on F-score, which combine both precision and recall quite favorably and is a more robust metric than accuracy under this circumstance.
 
-1. On the test set, within each type of group, the highest F-score is achieved by a variant with at least some flavor of data manipulation. Namely, <font color='pink'>AlexNet</font> with augmentation, <font color='lightblue'>ResNet</font> with augmentation and $600 \times 600$ images, and <font color='lightgreen'>InceptionNet</font> with augmentation and $600 \times 600$ images. This implies that data augmentation and a larger input size are conducive to generalizability when employed wisely.
+1. On the test set, within each type of group, the highest F-score is achieved by a variant with at least some flavor of data manipulation. Namely, <font color='pink'>AlexNet</font> with augmentation, <font color='lightblue'>ResNet</font> with augmentation and 600 by 600 images, and <font color='lightgreen'>InceptionNet</font> with augmentation and 600 by 600 images. This implies that data augmentation and a larger input size are conducive to generalizability when employed wisely.
 
 2. On the test set, metrics fall within a relatively narrow range among different architectures with slight variation. For instance, F-score varies over the range <font color='green'>0.83-0.90</font>. Thus, it seems to follow that no model archicture presumbaly has an edge over other candidates. 
 
