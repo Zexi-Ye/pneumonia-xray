@@ -8,7 +8,7 @@
 
 ## Overview
 
-This project aims to develop a deep learning model that identifies whether a patient has developed pneumonia using his or her chest X-ray image. By 
+This project aims to develop a deep learning model that identifies whether a patient has developed pneumonia using his or her chest X-ray image.
 
 ### Dataset
 
